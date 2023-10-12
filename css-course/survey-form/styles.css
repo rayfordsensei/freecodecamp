@@ -1,3 +1,52 @@
 body {
-  background-image: url(bg.jpg);
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  font-family: Consolas, serif;
+  color: #ffdede;
+  background-image: url(https://rayfordsensei.github.io/freecodecamp/css-course/survey-form/bg.jpg);
+  background-position: center;
+  font-size: 16px;
+}
+h1, p {
+  text-align: center;
+}
+label, input, select, textarea {
+  display:block;
+  margin: 0;
+}
+input {
+  margin-top: 2px;
+  min-height: 1rem;
+}
+label, #comments {
+  margin: 0.5em 0;
+}
+input[type='checkbox'], input[type='radio'] {
+  display:inline;
+}
+form {
+  border: 1px solid #ffdede;
+  width: 60vw;
+  max-width:500px;
+  min-width:300px;
+  margin: 0 auto;
+  background-color:rgba(0,0,0,0.5);
+}
+#name, #email, #number, #comments, #dropdown {
+  width:100%;
+}
+input[type="submit"] {
+  display:block;
+  width: 15%;
+  margin: 2px auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color:rgba(0,0,0,0.6);
+  color: #ffdede;
+  border:1px solid #ffdede;
+  min-width:70px;
+}
+fieldset {
+  border: none;
 }
