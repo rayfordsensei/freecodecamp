@@ -4,43 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Form</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="https://rayfordsensei.github.io/freecodecamp/css-course/survey-form/styles.css" rel="stylesheet">
   </head>
   <body>
     <h1 id="title">Developer Questionnaire</h1>
     <p id="description">Thank you for taking the time to answer the questions!</p>
     <form id="survey-form">
       <fieldset>
-        <label for='name'>Enter your Name: <input id="name" type="text" placeholder='John' required /></label>
-        <label for='email'>Enter your E-mail: <input id="email" type="email" placeholder='example@example.com' required /></label>
-        <label for='number'>Enter your Age (optional): <input id="number" type="number" min='13' max='99' placeholder='21' /></label>
-        <label for='dropdown'>Select an option that describes your current coding skills:
-          <select id="dropdown">
-           <option value=''>(select one)</option>
-           <option value='1'>New to coding</option>
-           <option value='2'>Amateur</option>
-           <option value='3'>Professional</option>
-          </select>
-        </label>
+        <label id = 'name-label' for='name'>Enter your Name: <input id="name" type="text" placeholder='John' required /></label>
+        <label id = "email-label" for='email'>Enter your E-mail: <input id="email" type="email" placeholder='example@example.com' required /></label>
+        <label id = "number-label" for='number'>Enter your Age (optional): <input id="number" type="number" min='13' max='99' placeholder='21' /></label>
+        <label for="dropdown">Select an option that describes your current coding skills:<select id="dropdown" name="skills">
+           <option disabled selected value="">(select one)</option>
+           <option value="new">New to coding</option>
+           <option value="amateur">Amateur</option>
+           <option value="professional">Professional</option>
+          </select></label>
       </fieldset>
       <fieldset>
         <legend>Would you learn a new programming language?</legend>
-        <label><input name='learning' type="radio" class="" checked /> Yes</label>
-        <label><input name='learning' type="radio" class="" /> No</label></label>
-        <label><input name='learning' type="radio" class="" /> Perhaps</label>
+        <label><input name='learning' type="radio" value="yes" checked /> Yes</label>
+        <label><input name='learning' type="radio" value="no" /> No</label>
+        <label><input name='learning' type="radio" value="perhaps" /> Perhaps</label>
       </fieldset>
       <fieldset>
         <legend>Which of the following languages do you already know?</legend>
-        <input class="" value='js' type="checkbox" /> JavaScript
-        <input class="" value='cCpp' type="checkbox" /> C/C++
-        <input class="" value='java' type="checkbox" /> Java
-        <input class="" value='php' type="checkbox" /> PHP
-        <input class="" value='other' type="checkbox" /> Other
+        <label class><input class="" value='js' type="checkbox" /> JavaScript</label>
+        <label><input class="" value='cCpp' type="checkbox" /> C/C++</label>
+        <label><input class="" value='java' type="checkbox" /> Java</label>
+        <label><input class="" value='php' type="checkbox" /> PHP</label>
+        <label><input class="" value='other' type="checkbox" /> Other</label>
       </fieldset>
       <fieldset>
-        <label>Write down your thoughts on how do you think we could improve this questionnaire:<textarea id="" rows="3" cols="30" placeholder="Write here!"></textarea></label>
+        <label for="comments">Write down your thoughts on how do you think we could improve this questionnaire:<textarea id="comments" rows="3" cols="30" placeholder="Write here!"></textarea></label>
       </fieldset>
-      <input type="submit" value="Submit" />
+      <input type="submit" id="submit" value="Submit" />
     </form>
   </body>
 </html>
