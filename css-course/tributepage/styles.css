@@ -1,0 +1,40 @@
+#image {
+    height:auto;
+    max-width: 40vw;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    display: block;
+    justify-content: center;
+}
+#main {
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    background-color: #d5d5d5;
+    padding: 5px;
+    margin: 0 0;
+}
+#title {
+font-size:2rem;
+}
+h2 {
+    font-size: 1.1rem;
+}
+#img-div {
+    background-color: #e5e5e5;
+    padding: 15px;
+}
+#img-caption {
+    font-style: italic;
+}
+#tribute-info {
+}
+ul {
+    max-width: 550px;
+    margin: 0 auto 40px auto;
+    text-align: left;
+    line-height: 1.8;
+}
+#tribute-link {
+    text-decoration: none;
+    color: #850000;
+}
