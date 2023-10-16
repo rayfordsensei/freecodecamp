@@ -1,10 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<link href="styles.css" rel="stylesheet">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>HTTP Documentation</title>
+	</head>
+	<body>
+	<nav id="navbar">
+		<header>HTTP Documentation</header>
+		<ul>
+			<li><a class="nav-link" href="#HTTP">HTTP</a></li>
+			<li><a class="nav-link" href="#An_overview_of_HTTP">An overview of HTTP</a></li>
+			<li><a class="nav-link" href="#Evolution_of_HTTP">Evolution of HTTP</a></li>
+			<li><a class="nav-link" href="#Invention_of_the_World_Wide_Web">Invention of the World Wide Web</a></li>
+			<li><a class="nav-link" href="#HTTP/0.9_-_The_one-line_protocol">HTTP/0.9 - The one-line protocol</a></li>
+			<li><a class="nav-link" href="#HTTP/1.0_-_Building_extensibility">HTTP/1.0 - Building extensibility</a></li>
+			<li><a class="nav-link" href="#HTTP_Messages">HTTP Messages</a></li>
+			<li><a class="nav-link" href="#A_typical_HTTP_session">A typical 	HTTP session</a></li>
+			<li><a class="nav-link" href="#Establishing_a_connection">Establishing a connection</a></li>
+			<li><a class="nav-link" href="#Reference">Reference</a></li>
+		</ul>
+	</nav>
+	<main id="main-doc">
+		<section class="main-section" id="HTTP">
+			<header>HTTP</header>
+			<p>Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting hypermedia documents, such as HTML.
+				It was designed for communication between web browsers and web servers, but it can also be used for other purposes.
+				HTTP follows a classical client-server model, with a client opening a connection to make a request, then waiting until it receives a response.
+				HTTP is a stateless protocol, meaning that the server does not keep any data (state) between two requests.</p>
+		</section>
+		<section class="main-section" id="An_overview_of_HTTP">
+			<header>An overview of HTTP</header>
+			<p>HTTP is a protocol for fetching resources such as HTML documents.
+				It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser.
+				A complete document is reconstructed from the different sub-documents fetched, for instance, text, layout description, images, videos, scripts, and more. </p>
+			<img class="image" src='https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/fetching_a_page.png'>
+			<p>Clients and servers communicate by exchanging individual messages (as opposed to a stream of data).
+				The messages sent by the client, usually a Web browser, are called requests and the messages sent by the server as an answer are called responses. </p>
+			<img class="image" src='https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/http-layers.png'>
+			<p>Designed in the early 1990s, HTTP is an extensible protocol which has evolved over time.
+				It is an application layer protocol that is sent over TCP, or over a TLS-encrypted TCP connection, though any reliable transport protocol could theoretically be used.
+				Due to its extensibility, it is used to not only fetch hypertext documents, but also images and videos or to post content to servers, like with HTML form results.
+				HTTP can also be used to fetch parts of documents to update Web pages on demand. </p>
+		</section>
+		<section class="main-section" id="Evolution_of_HTTP">
+			<header>Evolution of HTTP</header>
+			<p>HTTP (HyperText Transfer Protocol) is the underlying protocol of the World Wide Web.
+				Developed by Tim Berners-Lee and his team between 1989-1991, HTTP has gone through many changes that have helped maintain its simplicity while shaping its flexibility.
+				Keep reading to learn how HTTP evolved from a protocol designed to exchange files in a semi-trusted laboratory environment into a modern internet maze that carries images and videos in high resolution and 3D.</p>
+		</section>
+		<section class="main-section" id="Invention_of_the_World_Wide_Web">
+				<header>Invention of the World Wide Web</header>
+			<p>In 1989, while working at CERN, Tim Berners-Lee wrote a proposal to build a hypertext system over the internet.
+				Initially called the Mesh, it was later renamed the World Wide Web during its implementation in 1990.
+				Built over the existing TCP and IP protocols, it consisted of 4 building blocks:</p>
+			<ul>
+				<li>A textual format to represent hypertext documents, the HyperText Markup Language (HTML).</li>
+				<li>A simple protocol to exchange these documents, the HyperText Transfer Protocol (HTTP).</li>
+				<li>A client to display (and edit) these documents, the first web browser called the WorldWideWeb.</li>
+				<li>A server to give access to the document, an early version of httpd.</li>
+			</ul>
+			<p>These four building blocks were completed by the end of 1990, and the first servers were running outside of CERN by early 1991.
+				On August 6, 1991, Tim Berners-Lee posted on the public alt.hypertext newsgroup.
+				This is now considered to be the official start of the World Wide Web as a public project.</p>
+			<p>The HTTP protocol used in those early phases was very simple.
+				It was later dubbed HTTP/0.9 and is sometimes called the one-line protocol.</p>
+		</section>
+		<section class="main-section" id="HTTP/0.9_-_The_one-line_protocol">
+			<header>HTTP/0.9 - The one-line protocol</header>
+			<p>The initial version of HTTP had no version number; it was later called 0.9 to differentiate it from later versions.
+				HTTP/0.9 was extremely simple: requests consisted of a single line and started with the only possible method GET followed by the path to the resource.
+				The full URL wasn't included as the protocol, server, and port weren't necessary once connected to the server.</p>
+			<code>GET /mypage.html</code>
+			<p>The response was extremely simple, too: it only consisted of the file itself.</p>
+				<code>
+					&lt;html><br>
+					A very simple HTML page<br>
+					&lt;html></code>
+			<p>Unlike subsequent evolutions, there were no HTTP headers.
+				This meant that only HTML files could be transmitted.
+				There were no status or error codes.
+				If there was a problem, a specific HTML file was generated and included a description of the problem for human consumption.</p>
+	</section>
+	<section class="main-section" id="HTTP/1.0_-_Building_extensibility">
+		<header>HTTP/1.0 - Building extensibility</header>
+		<p>HTTP/0.9 was very limited, but browsers and servers quickly made it more versatile:</p>
+		<ul>
+			<li>Versioning information was sent within each request (<code>HTTP/1.0</code> was appended to the <code>GET</code> line).</li>
+			<li>A status code line was also sent at the beginning of a response.
+				This allowed the browser itself to recognize the success or failure of a request and adapt its behavior accordingly.
+				For example, updating or using its local cache in a specific way.</li>
+			<li>The concept of HTTP headers was introduced for both requests and responses.
+				Metadata could be transmitted and the protocol became extremely flexible and extensible.</li>
+			<li>Documents other than plain HTML files could be transmitted thanks to the <code>Content-Type</code> header.</li>
+		</ul>
+		<p>At this point in time, a typical request and response looked like this:</p>
+		<code>GET /mypage.html HTTP/1.0<br>
+			User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)<br>
+			<br>
+			200 OK<br>
+			Date: Tue, 15 Nov 1994 08:12:31 GMT<br>
+			Server: CERN/3.0 libwww/2.17<br>
+			Content-Type: text/html<br>
+			&lt;HTML><br>
+			A page with an image<br>
+			&lt;IMG SRC="/myimage.gif"><br>
+			&lt;/HTML><br>
+			</code>
+		<p>It was followed by a second connection and a request to fetch the image (with the corresponding response):</p>
+		<code>GET /myimage.gif HTTP/1.0<br>
+			User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)<br>
+			<br>
+			200 OK<br>
+			Date: Tue, 15 Nov 1994 08:12:32 GMT<br>
+			Server: CERN/3.0 libwww/2.17<br>
+			Content-Type: text/gif<br>
+			(image content)<br>
+			</code>
+			<p>Between 1991-1995, these were introduced with a try-and-see approach.
+				A server and a browser would add a feature and see if it got traction.
+				Interoperability problems were common.
+				In an effort to solve these issues, an informational document that described the common practices was published in November 1996.
+				This was known as RFC 1945 and defined HTTP/1.0.</p>
+</section>
+		<section class="main-section" id="HTTP_Messages">
+			<header>HTTP Messages</header>
+			<p>HTTP messages are how data is exchanged between a server and a client.
+				There are two types of messages: requests sent by the client to trigger an action on the server, and responses, the answer from the server.</p>
+			<p>HTTP messages are composed of textual information encoded in ASCII, and span over multiple lines.
+				In HTTP/1.1, and earlier versions of the protocol, these messages were openly sent across the connection.
+				In HTTP/2, the once human-readable message is now divided up into HTTP frames, providing optimization and performance improvements.</p>
+			<p>Web developers, or webmasters, rarely craft these textual HTTP messages themselves: software, a Web browser, proxy, or Web server, perform this action.
+				They provide HTTP messages through config files (for proxies or servers), APIs (for browsers), or other interfaces.</p>
+			<img class="image" src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages/httpmsg2.png">
+			<p>The HTTP/2 binary framing mechanism has been designed to not require any alteration of the APIs or config files applied: it is broadly transparent to the user.</p>
+			<p>HTTP requests, and responses, share similar structure and are composed of:</p>
+			<ol>
+				<li>A start-line describing the requests to be implemented, or its status of whether successful or a failure. This start-line is always a single line.</li>
+				<li>An optional set of HTTP headers specifying the request, or describing the body included in the message.</li>
+				<li>A blank line indicating all meta-information for the request has been sent.</li>
+				<li>An optional body containing data associated with the request (like content of an HTML form), or the document associated with a response. The presence of the body and its size is specified by the start-line and HTTP headers.</li>
+			</ol>
+			<p>The start-line and HTTP headers of the HTTP message are collectively known as the head of the requests, whereas its payload is known as the body.</p>
+			<img class="image" src='https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages/httpmsgstructure2.png'>
+		</section>
+		<section class="main-section" id="A_typical_HTTP_session">
+			<header>A typical HTTP session</header>
+			<p>In client-server protocols, like HTTP, sessions consist of three phases:</p>
+			<ol>
+				<li>The client establishes a TCP connection (or the appropriate connection if the transport layer is not TCP).</li>
+				<li>The client sends its request, and waits for the answer.</li>
+				<li>The server processes the request, sending back its answer, providing a status code and appropriate data.</li>
+			</ol>
+			<p>As of HTTP/1.1, the connection is no longer closed after completing the third phase, and the client is now granted a further request: this means the second and third phases can now be performed any number of times.</p>
+		</section>
+		<section class="main-section" id="Establishing_a_connection">
+		<header>Establishing a connection</header>
+			<p>In client-server protocols, it is the client which establishes the connection.
+				Opening a connection in HTTP means initiating a connection in the underlying transport layer, usually this is TCP.</p>
+			<p>With TCP the default port, for an HTTP server on a computer, is port 80.
+				Other ports can also be used, like 8000 or 8080.
+				The URL of a page to fetch contains both the domain name, and the port number, though the latter can be omitted if it is 80.
+				See Identifying resources on the Web for more details.</p>
+		</section>
+		<section class="main-section" id="Reference">
+			<header>Reference</header>
+			<p><i>Technical documentation was taken from <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">developer.mozilla.org</a></i></p>
+		</section>
+	</main>
+	</body>
+	</html>
