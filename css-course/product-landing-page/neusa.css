@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Neusa';
+    src: local('Neusa Demi Bold'), local('Neusa-Demi-Bold'),
+        url('Neusa-DemiBold.woff2') format('woff2'),
+        url('Neusa-DemiBold.woff') format('woff'),
+        url('Neusa-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }

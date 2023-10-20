@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'benderregular';
+    src: url('bender-font-webfont.woff2') format('woff2'),
+         url('bender-font-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
