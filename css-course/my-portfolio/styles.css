@@ -1,32 +1,120 @@
-/* 1+ @media */
 * {
 	box-sizing: border-box;
 }
 html {
+	text-align: center;
+	font-family: "benderregular";
 }
-#welcome-section {
-	height: 100%;
+body {
+	background: #d3d3d3;
+	margin: 0;
 }
-#navbar {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	margin: auto;
-	display: flex;
-}
-#navbar a:hover {
-}
-#navbar ul {
+ul {
 	list-style: none;
 }
-#navbar li {
-	display: inline-block;
+#navbar {
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background: dimgrey;
+	position: fixed;
+	width: 100%;
+	height: 4vh;
+	font-size: 24px;
+	border: 1px solid rgba(0, 0, 0, 0.5);
 }
 #navbar a {
-	padding: 0 16px;
-	display: block;
+	padding: 0 10px;
+	font-weight: bold;
+}
+#navbar a:hover {
+	background: white;
+}
+main {
+	padding-top: 4vh;
+}
+a {
+	color: black;
 	text-decoration: none;
+}
+#welcome-section {
+	background: darkgrey;
+	color: black;
+	padding: 1px;
+}
+#welcome-section p {
+	font-size: 18px;
+}
+#welcome-section h1 {
+	letter-spacing: 0.05em;
+}
+#avatar {
+	border-radius: 100%;
+	height: auto;
+	max-width: 18%;
+}
+#projects {
+	width: 100%;
+	background: grey;
+	padding: 1px 0;
+}
+.project-title {
+	font-weight: bold;
+	font-size: 16px;
+	padding-bottom: 2px;
+}
+#projects-list {
+	display: flex;
+	margin-left: -40px;
+}
+#project-preview {
+	width: 96%;
+}
+#contact-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #d3d3d3;
+	width: 100%;
+	height: 15vh;
+}
+#profile-link {
+	font-weight: bold;
+}
+@media screen and (max-width: 900px) {
+	#navbar a {
+		font-size: 22px;
+		padding: 0 8px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#navbar a {
+		font-size: 18px;
+		padding: 0 6px;
+	}
+}
+@media screen and (max-width: 450px) {
+	h1 {
+		font-size: 0.85rem;
+	}
+	#welcome-section p {
+		font-size: 10px;
+	}
+	.project-title {
+		font-size: 10px;
+	}
+	#navbar a {
+		font-size: 12px;
+		padding: 0 4px;
+	}
+	#contact-info p {
+		font-size: 10px;
+	}
+	#contact-info a {
+		font-size: 12px;
+	}
 }

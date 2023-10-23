@@ -4,25 +4,70 @@
 		<meta charset="utf-8" />
 		<title>Personal Portfolio</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="./styles.css" />
+		<link rel="stylesheet" href="./fonts/bender-font.css" />
+		<script
+			src="https://kit.fontawesome.com/31615c33c2.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
 		<nav id="navbar">
-			<a href="#"></a>
+			<a href="#welcome-section">About me</a>
+			<a href="#projects-section">My projects</a>
+			<a href="#contact-info">Contacts</a>
 		</nav>
-		<section id="welcome-section">
-			<h1>Hello, I'm a beginner Web Developer.</h1>
-			<img />
-			<p>
-				I decided to start learning HTML & CSS as an introduction to web development, so
-				here are some projects that I made:
-			</p>
-		</section>
-		<section id="projects">
-			<header class="project-title"></header>
-			<a></a>>
-		</section>
-		<a href="https://github.com/rayfordsensei" target="_blank"></a>
-		<!-- <main> maybe? -->
+		<main>
+			<section id="welcome-section">
+				<h1>Hello, I'm a beginner Web Developer.</h1>
+				<img id="avatar" src="https://avatars.githubusercontent.com/u/41239623" />
+				<p>
+					I decided to start learning HTML & CSS as an introduction to web development, so
+					here are some <em>cool</em> projects that I made:
+				</p>
+			</section>
+			<section id="projects">
+				<ul id="projects-list">
+					<li class="project-tile">
+						<header class="project-title">Landing page</header>
+						<a
+							href="https://rayfordsensei.github.io/freecodecamp/css-course/product-landing-page"
+							target="_blank"
+							><img id="project-preview" src="./pics/landing-page.png"
+						/></a>
+					</li>
+					<li class="project-tile">
+						<header class="project-title">Survey form</header>
+						<a
+							href="https://rayfordsensei.github.io/freecodecamp/css-course/survey-form"
+							target="_blank"
+							><img id="project-preview" src="./pics/survey-form.png"
+						/></a>
+					</li>
+					<li class="project-tile">
+						<header class="project-title">Techdoc page</header>
+						<a
+							href="https://rayfordsensei.github.io/freecodecamp/css-course/techdoc-page"
+							target="_blank"
+							><img id="project-preview" src="./pics/techdoc-page.png"
+						/></a>
+					</li>
+					<li class="project-tile">
+						<header class="project-title">Tribute page</header>
+						<a
+							href="https://rayfordsensei.github.io/freecodecamp/css-course/tribute-page"
+							target="_blank"
+							><img id="project-preview" src="./pics/tribute-page.png"
+						/></a>
+					</li>
+				</ul>
+			</section>
+			<section id="contact-info">
+				<p>Want to check what I'm currently working on? Take a look!</p>
+				<a id="profile-link" href="https://github.com/rayfordsensei" target="_blank"
+					><i class="fa-brands fa-github" style="color: #000000"></i> Github</a
+				>
+			</section>
+		</main>
 	</body>
 </html>
