@@ -1,0 +1,12 @@
+body {
+	background-color: black;
+	font-family: Consolas, sans-serif;
+}
+ul li {
+	margin-bottom: 1px;
+}
+ul li a {
+	text-decoration: none;
+	color: rgb(224, 47, 47);
+	font-size: 20px;
+}
