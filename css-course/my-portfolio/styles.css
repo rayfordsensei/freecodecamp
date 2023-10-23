@@ -1,0 +1,33 @@
+/* 1+ @media */
+* {
+	box-sizing: border-box;
+}
+html {
+}
+#welcome-section {
+	height: 100%;
+}
+#navbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	margin: auto;
+	display: flex;
+}
+#navbar a:hover {
+}
+#navbar ul {
+	list-style: none;
+}
+#navbar li {
+	display: inline-block;
+}
+#navbar a {
+	padding: 0 16px;
+	display: block;
+	text-decoration: none;
+}
+	
