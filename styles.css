@@ -1,12 +1,22 @@
 body {
-	background-color: black;
-	font-family: Consolas, sans-serif;
+	background-color: grey;
+	font-family: "benderregular", Consolas, sans-serif;
+	font-size: 20px;
+}
+a {
+	text-decoration: none;
+	color: rgb(224, 47, 47);
+	font-size: 18px;
 }
 ul li {
 	margin-bottom: 1px;
 }
-ul li a {
-	text-decoration: none;
-	color: rgb(224, 47, 47);
-	font-size: 20px;
+li a {
+	font-size: 16px;
+}
+h1 {
+	font-size: 24px;
+}
+h1 a {
+	font-size: 24px;
 }
