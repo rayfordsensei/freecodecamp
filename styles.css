@@ -2,6 +2,7 @@ body {
 	background-color: grey;
 	font-family: "benderregular", Consolas, sans-serif;
 	font-size: 20px;
+	height: 100vh;
 }
 a {
 	text-decoration: none;
