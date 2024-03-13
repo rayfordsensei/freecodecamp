@@ -1,0 +1,78 @@
+// https://codepen.io/hezag/pen/ZGxOLX
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+div {
+    position: relative;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#quote-box {
+    font-family: "benderregular";
+    width: 450px;
+    height: auto;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: white;
+    padding: 40px 50px;
+    display: table;
+    position: relative;
+}
+
+#quote-text {
+    font-style: italic;
+    text-align: center;
+    width: 450px;
+    height: auto;
+    clear: both;
+    font-size: 1.3em;
+}
+
+#quote-author {
+    text-align: right;
+    clear: both;
+    padding-top: 20px;
+}
+
+#buttons {
+    width: 450px;
+    margin: auto;
+    display: block;
+}
+
+#tweet-quote,
+#new-quote {
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    outline: none;
+    padding: 8px 18px 6px 18px;
+    margin-top: 30px;
+    opacity: 1;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+#tweet-quote {
+    float: left;
+    padding: 0px;
+    padding-top: 8px;
+    text-align: center;
+    margin-right: 5px;
+    height: 30px;
+    width: 40px;
+}
+
+#new-quote {
+    float: right;
+}
