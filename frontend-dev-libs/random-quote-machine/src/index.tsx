@@ -9,7 +9,7 @@ declare const ReactDOM: typeof import("react-dom/client");
 
 const quoteBox = document.getElementById("quote-box")!
 
-        function Quote({ index }: { index: number }) 
+        function Quote({ index }: { index: number })
         {
             return (
                 <div id="quote">
