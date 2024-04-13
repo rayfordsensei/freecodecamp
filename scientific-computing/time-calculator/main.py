@@ -43,13 +43,10 @@ def add_time(start, duration, starting_day=None):
         final_m = "0" + str(final_m)
 
     if starting_day is not None:
-
-        print(days_later, days_after)
-
         day = days.get(starting_day.lower())
 
         if days_after != 0:
-            days_after += day
+            days_after += int(day or 0)
 
             while days_after > 7:
                 days_after -= 7
@@ -79,3 +76,22 @@ def add_time(start, duration, starting_day=None):
             final_time = f"{str(final_h)}:{str(final_m)} {final_period} ({days_later} days later)"
 
     return final_time
+
+
+print(add_time("3:00 PM", "3:10"))
+# Returns: 6:10 PM
+
+print(add_time("11:30 AM", "2:32", "Monday"))
+# Returns: 2:02 PM, Monday
+
+print(add_time("11:43 AM", "00:20"))
+# Returns: 12:03 PM
+
+print(add_time("10:10 PM", "3:30"))
+# Returns: 1:40 AM (next day)
+
+print(add_time("11:43 PM", "24:20", "tueSday"))
+# Returns: 12:03 AM, Thursday (2 days later)
+
+print(add_time("6:30 PM", "205:12"))
+# Returns: 7:42 AM (9 days later)

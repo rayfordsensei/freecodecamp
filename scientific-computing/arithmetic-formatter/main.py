@@ -1,4 +1,5 @@
 import re
+import numexpr
 
 
 def arithmetic_arranger(problems, show_answers=False):
@@ -28,7 +29,7 @@ def arithmetic_arranger(problems, show_answers=False):
         problem_spacing = "    "
         formatted_txt = txt.replace(" ", "")
 
-        left_part = re.search(number_pattern, formatted_txt).group()
+        left_part = re.search(number_pattern, formatted_txt).group()  # type: ignore # for simplicity
         operator = formatted_txt[len(left_part) : len(left_part) + 1]
         right_part = formatted_txt[len(left_part) + 1 :]
 
@@ -51,7 +52,7 @@ def arithmetic_arranger(problems, show_answers=False):
         upper = upper_spacing + left_part
         lower = operator + lower_spacing + right_part
 
-        answer = eval(txt)
+        answer = numexpr.evaluate(txt)
         for _ in range(len(upper) - len(str(answer))):
             answer_spacing += " "
         answer_part = answer_spacing + str(answer)
@@ -78,4 +79,12 @@ def arithmetic_arranger(problems, show_answers=False):
     return answers[0]
 
 
-print(arithmetic_arranger(["3801 - 2", "123 + 49"]))
+print(arithmetic_arranger(["3801 - 2", "123 + 49"]), "\n")
+print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]), "\n")
+print(arithmetic_arranger(["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"]), "\n")
+print(arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"]), "\n")
+print(arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"]), "\n")
+print(arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"]), "\n")
+print(arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"]), "\n")
+print(arithmetic_arranger(["3 + 855", "988 + 40"], True), "\n")
+print(arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"], True), "\n")
