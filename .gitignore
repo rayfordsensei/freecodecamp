@@ -29,3 +29,10 @@ dist-ssr
 .flake8
 pyproject.toml
 .vscode
+
+# data-analysis course delayed
+data-analysis
+
+# remove styles & index for future rework
+styles.css
+index.html
